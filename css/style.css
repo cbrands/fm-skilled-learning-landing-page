@@ -208,6 +208,9 @@ footer {
 
   .courses {
     margin-top: 11.625rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .hero {
@@ -225,6 +228,10 @@ footer {
     position: absolute;
     top: -4rem;
     right: -16.875rem;
+  }
+
+  .card {
+    width: 21rem;
   }
 
   footer {
@@ -273,6 +280,10 @@ footer {
 
   .courses {
     margin-top: 14.125rem;
+  }
+
+  .card {
+    width: 21.875rem;
   }
 
   .card__heading {
