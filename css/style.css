@@ -5,13 +5,15 @@
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-link: hsl(341, 92%, 62%);
   --clr-link-hover: hsl(341, 100%, 83%);
-  --gradient-header: linear-gradient(to bottom, hsl(13, 100%, 64%), hsl(322, 87%, 55%));
+  --gradient-hero: linear-gradient(to bottom, hsl(13, 100%, 64%), hsl(322, 87%, 55%));
   --gradient-footer: linear-gradient(to bottom, hsl(237, 100%, 64%), hsl(322, 87%, 55%));
-  --gradient-header-hover: linear-gradient(to bottom, hsl(13, 100%, 84%), hsl(322, 87%, 75%));
+  --gradient-hero-hover: linear-gradient(to bottom, hsl(13, 100%, 84%), hsl(322, 87%, 75%));
   --gradient-footer-hover: linear-gradient(to bottom, hsl(237, 100%, 84%), hsl(322, 87%, 75%));
   --gradient-bg: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(236, 100%, 97%));
 
-  --wrapper-width: 100%;
+  --wrapper-width: calc(100% - 2rem);
+  --bar-padding: 1rem 0;
+
   --fw-bold: 800;
   --fw-medium: 500;
   --fs-heading-xl: 3.5rem;
@@ -63,13 +65,74 @@ body {
   cursor: pointer;
 }
 
-.header__title {
+.hero__title {
   font-size: var(--fs-heading-l);
   line-height: var(--lh-heading-l);
   font-weight: var(--fw-bold);
   color: var(--clr-neutral-900);
 }
 
+/* Header section */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--bar-padding);
+}
+
+.topbar__btn {
+  background-color: var(--clr-neutral-900);
+}
+
+.topbar__btn:hover {
+  background-color: var(--clr-primary);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__content {
+  max-width: 100%;
+}
+
+.hero__btn {
+  width: 10.5rem;
+  height: 3.5rem;
+  background-image: var(--gradient-hero);
+}
+
+.hero__btn:hover {
+  background-image: var(--gradient-hero-hover);
+}
+
+.hero__text {
+  font-size: var(--fs-body-s);
+  line-height: var(--lh-body-s);
+  color: var(--clr-neutral-500);
+  padding: 1.5rem 0;
+}
+
+.hero__img {
+  max-width: 100%;
+}
+
+/* Main section */
+.courses {
+  min-width: var(--wrapper-width);
+  margin-top: 4.125rem;
+}
+
+.card {
+  background-color: var(--clr-neutral-100);
+}
+
+.card__text {
+  font-size: var(--fs-body-s);
+  line-height: var(--lh-body-s);
+  color: var(--clr-neutral-500);
+}
 .card__heading {
   font-size: var(--fs-heading-xs);
   line-height: var(--lh-heading-s);
@@ -82,55 +145,7 @@ body {
   line-height: var(--lh-heading-s);
   font-weight: var(--fw-bold);
   color: var(--clr-neutral-100);
-}
-
-/* Header section */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topbar__btn {
-  background-color: var(--clr-neutral-900);
-}
-
-.topbar__btn:hover {
-  background-color: var(--clr-primary);
-}
-
-.header__btn {
-  width: 10.5rem;
-  height: 3.5rem;
-  background-image: var(--gradient-header);
-}
-
-.header__btn:hover {
-  background-image: var(--gradient-header-hover);
-}
-
-.header__text {
-  font-size: var(--fs-body-s);
-  line-height: var(--lh-body-s);
-  color: var(--clr-neutral-500);
-}
-
-/* Main section */
-.courses {
-  min-width: var(--wrapper-width);
-}
-
-.card {
-  background-color: var(--clr-neutral-100);
-}
-.card--title {
-  background-image: var(--gradient-header);
-}
-
-.card__text {
-  font-size: var(--fs-body-s);
-  line-height: var(--lh-body-s);
-  color: var(--clr-neutral-500);
+  background-image: var(--gradient-hero);
 }
 
 .card__link {
@@ -147,7 +162,8 @@ body {
 /* Footer */
 footer {
   background-color: var(--clr-neutral-900);
-  margin-top: auto;
+  margin-top: 5rem;
+  padding: var(--bar-padding);
 }
 
 .footer__content {
@@ -169,6 +185,32 @@ footer {
 @media screen and (min-width:48em) {
   :root {
     --wrapper-width: 43rem;
+    --bar-padding: 1.5rem 0;
+  }
+
+  .courses {
+    margin-top: 11.625rem;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 6rem;
+  }
+
+  .hero__content {
+    max-width: 25rem;
+  }
+
+  .hero__img {
+    max-width: 40rem;
+    position: absolute;
+    top: -4rem;
+    right: -16.875rem;
+  }
+
+  footer {
+    margin-top: 5.375rem;
   }
 }
 
@@ -176,7 +218,18 @@ footer {
 /* Why I use em units form media queries https://zellwk.com/blog/media-query-units/ */
 @media screen and (min-width:80em) {
   :root {
-    --wrapper-width: 90rem;
+    --wrapper-width: 80rem;
+  }
+
+  .hero__img {
+    max-width: 62rem;
+    position: absolute;
+    top: -12rem;
+    right: -26rem;
+  }
+
+  .hero__content {
+    max-width: 29rem;
   }
 
   .btn {
@@ -186,18 +239,22 @@ footer {
     height: 3.5rem;
   }
 
-  .header__btn {
+  .hero__btn {
     height: 4rem;
   }
 
-  .header__title {
+  .hero__title {
     font-size: var(--fs-heading-xl);
     line-height: var(--lh-heading-xl);
   }
 
-  .header__text {
+  .hero__text {
     font-size: var(--fs-body-m);
     line-height: var(--lh-body-m);
+  }
+
+  .courses {
+    margin-top: 14.125rem;
   }
 
   .card__heading {
@@ -207,5 +264,9 @@ footer {
   .card__title {
     font-size: var(--fs-heading-m);
     line-height: var(--lh-heading-m);
+  }
+
+  footer {
+    margin-top: 8.75rem;
   }
 }

@@ -17,11 +17,31 @@
       <img class="topbar__logo" src="./assets/logo-dark.svg" alt="">
       <a href="#"><button class="btn topbar__btn">Get Started</button></a>  
     </div>
-    <h1 class="header__title">Maximize skill, minimize budget</h1>
-    <p class="header__text">Our modern courses across a range of in-demand skills will give you the 
-      knowledge you need to live the life you want.
-    </p>
-    <a href="#"><button class="btn header__btn">Get Started</button></a>
+    <div class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Maximize skill, minimize budget</h1>
+        <p class="hero__text">Our modern courses across a range of in-demand skills will give you the 
+          knowledge you need to live the life you want.
+        </p>
+        <a href="#"><button class="btn hero__btn">Get Started</button></a>
+      </div>
+      <picture class="hero__picture">
+        <source
+          media="(min-width: 768px)"
+          srcset="./assets/image-hero-tablet@2x.png"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcset="./assets/image-hero-desktop@2x.png"
+        />
+        <img
+          class="hero__img"
+          src="./assets/image-hero-mobile@2x.png"
+          alt=""
+        />
+      </picture>
+    </div>
+  
   </header>
   <main class="courses wrapper">
     <div class="card card--title"><h2 class="card__title">Check out our most popular courses!</h2></div>
