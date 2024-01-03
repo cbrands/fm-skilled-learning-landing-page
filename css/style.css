@@ -5,16 +5,32 @@
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-link: hsl(341, 92%, 62%);
   --clr-link-hover: hsl(341, 100%, 83%);
-  --gradient-1: linear-gradient(180deg, #F02AA6, #FF6F48);
-  --gradient-2: linear-gradient(180deg, #4851FF, #F02AA6);
-  --gradient-bg: linear-gradient(180deg, #FFFFFF, #F0F1FF);
+  --gradient-header: linear-gradient(to bottom, hsl(13, 100%, 64%), hsl(322, 87%, 55%));
+  --gradient-footer: linear-gradient(to bottom, hsl(237, 100%, 64%), hsl(322, 87%, 55%));
+  --gradient-header-hover: linear-gradient(to bottom, hsl(13, 100%, 84%), hsl(322, 87%, 75%));
+  --gradient-footer-hover: linear-gradient(to bottom, hsl(237, 100%, 84%), hsl(322, 87%, 75%));
+  --gradient-bg: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(236, 100%, 97%));
 
   --wrapper-width: 100%;
+  --fs-heading-xl: 3.5rem;
+  --fs-heading-l: 2.5rem;
+  --fs-heading-m: 2rem;
+  --fs-heading-s: 1.5rem;
+  --fs-body-m: 1.125rem;
+  --fs-body-s: 1rem;
+  --lh-heading-xl: 4.375rem;
+  --lh-heading-l: 3.25rem;
+  --lh-heading-m: 2.5rem;
+  --lh-heading-s: 1.75rem;
+  --lh-body-m: 1.75rem;
+  --lh-body-s: 1.75rem;
+
 }
 
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--gradient-bg);
 }
 
 /* Utilities */
@@ -23,7 +39,41 @@ body {
   margin: 0 auto;
 }
 
+.btn {
+  font-size: var(--fs-body-s);
+  line-height: var(--lh-body-s);
+  width:8.75rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 2rem;
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+}
+
 /* Header section */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar__btn {
+  background-color: var(--clr-neutral-900);
+}
+
+.topbar__btn:hover {
+  background-color: var(--clr-primary);
+}
+
+.header__btn {
+  width: 10.5rem;
+  height: 3.5rem;
+  background-image: var(--gradient-header);
+}
+
+.header__btn:hover {
+  background-image: var(--gradient-header-hover);
+}
 
 /* Main section */
 
@@ -35,13 +85,22 @@ footer {
 .footer__content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.footer__btn {
+  background-image: var(--gradient-footer);
+}
+
+.footer__btn:hover {
+  background-image: var(--gradient-footer-hover);
 }
 
 /* tablet size */
 /* Why I use em units form media queries https://zellwk.com/blog/media-query-units/ */
 @media screen and (min-width:48em) {
   :root {
-    --wrapper-width: 43rem%;
+    --wrapper-width: 43rem;
   }
 }
 
@@ -50,5 +109,16 @@ footer {
 @media screen and (min-width:80em) {
   :root {
     --wrapper-width: 90rem;
+  }
+
+  .btn {
+    font-size: var(--fs-body-m);
+    line-height: var(--lh-body-m);
+    width: 10.5rem;
+    height: 3.5rem;
+  }
+
+  .header__btn {
+    height: 4rem;
   }
 }
