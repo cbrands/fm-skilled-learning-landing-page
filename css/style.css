@@ -1,3 +1,54 @@
+:root {
+  --clr-neutral-900: hsl(233, 54%, 16%);
+  --clr-primary: hsl(234, 25%, 52%);
+  --clr-neutral-500: hsl(232, 10%, 56%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-link: hsl(341, 92%, 62%);
+  --clr-link-hover: hsl(341, 100%, 83%);
+  --gradient-1: linear-gradient(180deg, #F02AA6, #FF6F48);
+  --gradient-2: linear-gradient(180deg, #4851FF, #F02AA6);
+  --gradient-bg: linear-gradient(180deg, #FFFFFF, #F0F1FF);
+
+  --wrapper-width: 100%;
+}
+
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Utilities */
+.wrapper {
+  max-width: var(--wrapper-width);
+  margin: 0 auto;
+}
+
+/* Header section */
+
+/* Main section */
+
+/* Footer */
+footer {
+  background-color: var(--clr-neutral-900);
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* tablet size */
+/* Why I use em units form media queries https://zellwk.com/blog/media-query-units/ */
+@media screen and (min-width:48em) {
+  :root {
+    --wrapper-width: 43rem%;
+  }
+}
+
+/* Desktop size */
+/* Why I use em units form media queries https://zellwk.com/blog/media-query-units/ */
+@media screen and (min-width:80em) {
+  :root {
+    --wrapper-width: 90rem;
+  }
 }
