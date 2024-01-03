@@ -12,10 +12,13 @@
   --gradient-bg: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(236, 100%, 97%));
 
   --wrapper-width: 100%;
+  --fw-bold: 800;
+  --fw-medium: 500;
   --fs-heading-xl: 3.5rem;
   --fs-heading-l: 2.5rem;
   --fs-heading-m: 2rem;
   --fs-heading-s: 1.5rem;
+  --fs-heading-xs: 1.125rem;
   --fs-body-m: 1.125rem;
   --fs-body-s: 1rem;
   --lh-heading-xl: 4.375rem;
@@ -50,6 +53,27 @@ body {
   cursor: pointer;
 }
 
+.header__title {
+  font-size: var(--fs-heading-l);
+  line-height: var(--lh-heading-l);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-900);
+}
+
+.card__heading {
+  font-size: var(--fs-heading-xs);
+  line-height: var(--lh-heading-s);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-900);
+}
+
+.card__title {
+  font-size: var(--fs-heading-s);
+  line-height: var(--lh-heading-s);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-100);
+}
+
 /* Header section */
 .topbar {
   display: flex;
@@ -75,7 +99,36 @@ body {
   background-image: var(--gradient-header-hover);
 }
 
+.header__text {
+  font-size: var(--fs-body-s);
+  line-height: var(--lh-body-s);
+  color: var(--clr-neutral-500);
+}
+
 /* Main section */
+.card {
+  background-color: var(--clr-neutral-100);
+}
+.card--title {
+  background-image: var(--gradient-header);
+}
+
+.card__text {
+  font-size: var(--fs-body-s);
+  line-height: var(--lh-body-s);
+  color: var(--clr-neutral-500);
+}
+
+.card__link {
+  font-size: var(--fs-body-m);
+  line-height: var(--lh-body-m);
+  text-decoration: none;
+  color: var(--clr-link);
+}
+
+.card__link:hover {
+  color: var(--clr-link-hover);
+}
 
 /* Footer */
 footer {
@@ -120,5 +173,24 @@ footer {
 
   .header__btn {
     height: 4rem;
+  }
+
+  .header__title {
+    font-size: var(--fs-heading-xl);
+    line-height: var(--lh-heading-xl);
+  }
+
+  .header__text {
+    font-size: var(--fs-body-m);
+    line-height: var(--lh-body-m);
+  }
+
+  .card__heading {
+    font-size: var(--fs-heading-s);
+  }
+
+  .card__title {
+    font-size: var(--fs-heading-m);
+    line-height: var(--lh-heading-m);
   }
 }
