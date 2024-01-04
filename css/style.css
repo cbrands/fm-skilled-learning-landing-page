@@ -55,6 +55,9 @@ body {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: var(--fs-body-s);
   line-height: var(--lh-body-s);
   width:8.75rem;
@@ -63,6 +66,7 @@ body {
   border-radius: 2rem;
   color: var(--clr-neutral-100);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .hero__title {
@@ -116,6 +120,7 @@ body {
 
 .hero__img {
   max-width: 100%;
+  pointer-events: none;
 }
 
 /* Main section */
